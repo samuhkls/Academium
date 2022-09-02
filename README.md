@@ -1,5 +1,12 @@
 # Academium
 
+#Instale o pip ( python -m ensurepip )
+#De upgrade no pip (pip install --upgrade pip)
+#instale o selenium ( pip install selenium )
+#Instale o bs4 ( pip install beautifulsoup4 )
+#Instale o webdriver manager ( pip install webdriver_manager )
+#Instale o conector de MySQL x Python ( pip install mysql-connector-python ) 
+
 links com guias para git
 
 como clonar o repo
