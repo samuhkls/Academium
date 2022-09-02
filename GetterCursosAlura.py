@@ -103,13 +103,18 @@ for x in range(0, len(links_cursos), 1):
     #Mudando todas as váriaveis com as tipagens corretas 1/2
     nomes_cursos[x] = nomes_cursos[x].getText()
     horas_cursos[x] = horas_cursos[x].replace("h", "")
-    preco_assinatura[0] = preco_assinatura[0].replace("R$", "")
+    print(preco_assinatura[0])
+    preco_cursos = preco_assinatura[0].getText()
+    print(preco_cursos)
+    preco_cursos = preco_cursos.replace("R", "")
+    preco_cursos = preco_cursos.replace("$", "")
+    print(preco_cursos)
     
     #Mostra as informações coletadas do curso
     print(f"\nCurso n° {x}")
-    print(f"Nome do curso: {nomes_cursos[x].getText()}:")
+    print(f"Nome do curso: {nomes_cursos[x]}:")
     print(f"Carga horária: {horas_cursos[x]}h")
-    print(f"Preço:{preco_assinatura[0].getText()}")
+    print(f"Preço: R${preco_cursos}")
     print(f"Link de acesso: {links_cursos[x]}")
     print(f"Avaliação desse curso é nota: {avaliacao_cursos[x]}")
     print(f"O tópico do curso é: {topico_cursos[x]}")
@@ -117,8 +122,11 @@ for x in range(0, len(links_cursos), 1):
 
 #Mudando todas as váriaveis com as tipagens corretas 2/2
 for x in range(len(avaliacao_cursos)):
-    
+    int(horas_cursos[x])
     float(avaliacao_cursos[x])
+
+#Tranformando o preço em int
+int(preco_cursos)
     
 
 #Mostrando qual o curso com a melhor avaliação
@@ -129,7 +137,7 @@ maximun_loc = avaliacao_cursos.index(maximun)
 print(f"\nCurso n° {maximun_loc}")
 print(f"Nome do curso: {nomes_cursos[maximun_loc].getText()}:")
 print(f"Carga horária: {horas_cursos[maximun_loc]}")
-print(f"Preço:{preco_assinatura[0].getText()}")
+print(f"Preço:{preco_cursos}")
 print(f"Link de acesso: {links_cursos[maximun_loc]}")
 print(f"Avaliação desse curso é nota: {avaliacao_cursos[maximun_loc]}")
 print(f"O tópico do curso é: {topico_cursos[maximun_loc]}")
