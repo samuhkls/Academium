@@ -14,6 +14,16 @@ from selenium.webdriver.common.by import By
 import mysql.connector
 import time
 
+#Fazendo a conexão com o banco de dados
+conexao = mysql.connector.connect(
+    host='localhost',
+    user='root',
+    password='',
+    database='academium-bd',
+)
+cursor = conexao.cursor()
+
+
 #Intalando o ChromeDriver
 servico = Service(ChromeDriverManager().install())
 driver = webdriver.Chrome(service=servico)
@@ -103,12 +113,9 @@ for x in range(0, len(links_cursos), 1):
     #Mudando todas as váriaveis com as tipagens corretas 1/2
     nomes_cursos[x] = nomes_cursos[x].getText()
     horas_cursos[x] = horas_cursos[x].replace("h", "")
-    print(preco_assinatura[0])
     preco_cursos = preco_assinatura[0].getText()
-    print(preco_cursos)
     preco_cursos = preco_cursos.replace("R", "")
     preco_cursos = preco_cursos.replace("$", "")
-    print(preco_cursos)
     
     #Mostra as informações coletadas do curso
     print(f"\nCurso n° {x}")
@@ -119,6 +126,8 @@ for x in range(0, len(links_cursos), 1):
     print(f"Avaliação desse curso é nota: {avaliacao_cursos[x]}")
     print(f"O tópico do curso é: {topico_cursos[x]}")
     print(f"O nome do professor(a) do curso é: {instrutor_curso[x]}")
+    
+
 
 #Mudando todas as váriaveis com as tipagens corretas 2/2
 for x in range(len(avaliacao_cursos)):
@@ -127,6 +136,12 @@ for x in range(len(avaliacao_cursos)):
 
 #Tranformando o preço em int
 int(preco_cursos)
+    
+for x in range(len(avaliacao_cursos)):
+    comando = f'INSERT INTO alura_cursos (curso_nome, carga_horaria, preco_curso, link_curso, avaliacao_curso, topico_curso, instrutor) VALUES ({nomes_cursos[x]}, {horas_cursos[x]}, {preco_cursos}, {links_cursos[x]}, {links_cursos[x]}, {avaliacao_cursos[x]}, {topico_cursos[x]}, {instrutor_curso[x]})'
+    cursor.execute(comando)  
+    conexao.commit()
+    print("Integração feita")
     
 
 #Mostrando qual o curso com a melhor avaliação
@@ -144,4 +159,6 @@ print(f"O tópico do curso é: {topico_cursos[maximun_loc]}")
 print(f"O nome do professor(a) do curso é: {instrutor_curso[maximun_loc]}")
 print("\n|-------------------Summary-------------------|")
 
-print(avaliacao_cursos)
+#Fechando a conexão com o banco
+cursor.close()
+conexao.close()
