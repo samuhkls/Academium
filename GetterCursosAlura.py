@@ -91,7 +91,7 @@ for x in range(0, len(links_cursos), 1):
         
     except:
         print("ERROR / CourseGradeNotFound")
-        avaliacao_cursos[x] = ""
+        avaliacao_cursos[x] = "None"
         
     #Coleta o tópico do curso
     try:
@@ -99,7 +99,7 @@ for x in range(0, len(links_cursos), 1):
         topico_cursos[x] = topico.getText()
     except:
         print("ERROR / SubjectNotFound")
-        topico_cursos[x] = ""
+        topico_cursos[x] = "None"
         
     #Adquire o nome do instrutor
     try:
@@ -108,7 +108,7 @@ for x in range(0, len(links_cursos), 1):
         instrutor_curso[x] = instrutor_curso[x].strip()
     except:
         print("ERROR / InstructorNotFound")
-        instrutor_curso[x] = ""
+        instrutor_curso[x] = "None"
     
     #Mudando todas as váriaveis com as tipagens corretas 1/2
     nomes_cursos[x] = nomes_cursos[x].getText()
@@ -127,7 +127,7 @@ for x in range(0, len(links_cursos), 1):
     print(f"O tópico do curso é: {topico_cursos[x]}")
     print(f"O nome do professor(a) do curso é: {instrutor_curso[x]}")
     
-
+print(avaliacao_cursos)
 
 #Mudando todas as váriaveis com as tipagens corretas 2/2
 for x in range(len(avaliacao_cursos)):
@@ -138,7 +138,7 @@ for x in range(len(avaliacao_cursos)):
 int(preco_cursos)
     
 for x in range(len(avaliacao_cursos)):
-    comando = f'INSERT INTO alura_cursos (curso_nome, carga_horaria, preco_curso, link_curso, avaliacao_curso, topico_curso, instrutor) VALUES ({nomes_cursos[x]}, {horas_cursos[x]}, {preco_cursos}, {links_cursos[x]}, {links_cursos[x]}, {avaliacao_cursos[x]}, {topico_cursos[x]}, {instrutor_curso[x]})'
+    comando = f'INSERT INTO alura_cursos (curso_nome, carga_horaria, preco_curso, link_curso, avaliacao_curso, topico_curso, instrutor) VALUES ("{nomes_cursos[x]}", "{horas_cursos[x]}", "{preco_cursos}", "{links_cursos[x]}", "{avaliacao_cursos[x]}", "{topico_cursos[x]}", "{instrutor_curso[x]}")'
     cursor.execute(comando)  
     conexao.commit()
     print("Integração feita")
