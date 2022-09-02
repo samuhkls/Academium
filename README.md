@@ -15,3 +15,6 @@ branches sao basicamente as alteraçoes que a gente faz no codigo, quando essas 
 
 python mysql.connector
 https://dev.mysql.com/doc/connector-python/en/connector-python-example-connecting.html
+
+os comandos sql pro python
+https://www.hashtagtreinamentos.com/crud-em-python
