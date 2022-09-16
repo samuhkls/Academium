@@ -41,7 +41,7 @@ preco_assinatura = soup.find_all("span", class_="planos-pagamento__valor-parcela
 
 
 #Abrindo a página dos cursos disponíveis
-url = "https://www.alura.com.br/cursos-online-devops"
+url = "https://www.alura.com.br/cursos-online-mobile"
 driver.get(url)
 # time.sleep(1)
 
@@ -134,8 +134,10 @@ for x in range(len(avaliacao_cursos)):
     int(horas_cursos[x])
     float(avaliacao_cursos[x])
 
+
 #Tranformando o preço em int
-int(preco_cursos)
+preco_cursos = preco_cursos.replace(',', '.')
+float(preco_cursos)
     
 for x in range(len(avaliacao_cursos)):
     comando = f'INSERT INTO alura_cursos (curso_nome, carga_horaria, preco_curso, link_curso, avaliacao_curso, topico_curso, instrutor) VALUES ("{nomes_cursos[x]}", "{horas_cursos[x]}", "{preco_cursos}", "{links_cursos[x]}", "{avaliacao_cursos[x]}", "{topico_cursos[x]}", "{instrutor_curso[x]}")'
@@ -150,7 +152,7 @@ maximun = max(avaliacao_cursos)
 maximun_loc = avaliacao_cursos.index(maximun)
 
 print(f"\nCurso n° {maximun_loc}")
-print(f"Nome do curso: {nomes_cursos[maximun_loc].getText()}:")
+print(f"Nome do curso: {nomes_cursos[maximun_loc]}:")
 print(f"Carga horária: {horas_cursos[maximun_loc]}")
 print(f"Preço:{preco_cursos}")
 print(f"Link de acesso: {links_cursos[maximun_loc]}")
