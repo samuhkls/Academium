@@ -1,24 +1,54 @@
+body{
+    background-color: #AF2D11;
+}
+
 .container{
-    width: 100vw;
-    height: 100vh;
-    background: #AF2D11;
     display:flex;
     justify-content: center;
     align-items: center;
-    flex-direction: flow;
 }
+
 .box{
-    width: 300px;
-    height: 300px;
+    
+    width: 350px;
+    height: 350px;
     background: #fff;
 }
+
+.btnContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .texto{
     padding-left: 10px;
 }
+
+.imgContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.imagemLogo{
+    height: 50px;
+    width: 50px;
+    padding-top: 5px;
+    
+}
+
 .botoes{
     background-color: #f44336;
     border: none;
-    color: white;
+    color: #fff;
+    width: 80px;
+    padding: 10px 5px;
+    margin-top: 10px;
+    margin-left: 5px;
+    border-radius: 5px;
+    font-size: 16px;
+    text-decoration: none;
     text-align: center;
     display: inline-block;
     cursor: pointer;
