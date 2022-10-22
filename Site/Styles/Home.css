@@ -1,7 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
+@import url('http://fonts.cdnfonts.com/css/tisa-sans-pro');
+
 *{
     padding: 0px;
     margin: 0px;
-
+    font-family: 'Tisa Sans Pro', sans-serif;
 }
 
 .navbar{
@@ -20,8 +23,9 @@
 }
 
 .HeaderLogo{
-    width: 45px;
-    height: 45px;
+    width: 40px;
+    height: 40px;
+    margin: 5px 15px 5px 10px;
 }
 
 .headerDivButton{
@@ -31,6 +35,55 @@
     height: 45px;
 }
 
+#LoginButton{
+    padding: 0px 25px;
+    margin: 5px 15px 5px 15px;
+}
+
 .headerDivLogo, .headerDivButton{
     width: 50%;
+}
+
+.Content{
+    margin: 60px 60px 50px 10px;
+    margin-left: clamp(50px, 10%, 200px);
+}
+
+#TextoTitu{
+    font-size: 200%;
+    font-weight: 800;
+}
+
+#TextoAuxilio{
+    font-size: 150%;
+    font-weight: 500;
+    width: 600px;
+}
+
+.SearchAreaDiv{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    border: solid 1px;
+    border-radius: 5px;
+    max-width: 400px;
+    
+}
+
+#LupaEmoji{
+    width: 30px;
+    height: 30px;
+}
+
+#InputAreaCourses{
+    border: none;
+    font-size: 100%;
+    width: 300px;
+    padding: 10px 10px 10px 10px;
+    margin:5px
+}
+
+#BuscarCourse{
+    padding: 0px 35px 0px 35px;
+    margin: 5px;
 }
