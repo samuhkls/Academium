@@ -1,11 +1,14 @@
 body{
     background-color: #AF2D11;
+
 }
 
 .container{
+    height: 100vh;
     display:flex;
     justify-content: center;
     align-items: center;
+    flex-direction: flow;
 }
 
 .box{
@@ -15,7 +18,7 @@ body{
     background: #fff;
 }
 
-.btnContainer{
+.imgContainer{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -25,7 +28,7 @@ body{
     padding-left: 10px;
 }
 
-.imgContainer{
+.btnContainer{
     display: flex;
     justify-content: center;
     align-items: center;
