@@ -5,12 +5,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Entrar</title>
+    <script src="./Scripts/registrarPopup.js"></script>
     <link rel="stylesheet" href="Styles\login.css">
 </head>
 <body>
 
-    <div class="container">
-        <div class="box">
+    <div id="container">
+        <div id="box">
 
             <div class = "imgContainer">
                 <img src = ".\Src\Novo Logo Academium Transparente.png" class = "imagemLogo">
@@ -18,21 +19,23 @@
 
             <div class = "texto">
 
-                <h1> Fazer Login</h1>
+                <h1 class = "titulo"> Fazer Login</h1>
                 
-                <p>Email:</p>
-                <input>
+                <input placeholder="Email">
                 
-                <p>Senha:</p>
-                <input type="password">
+                <input placeholder= "Senha" type="password">
                 
             </div>
 
             <div class = "btnContainer">
                 <button class="botoes">Entrar</button>
-                <button class="botoes">Registrar</button>
+                <button class="botoes" onclick="abreRegistrar()">Registrar</button>
             </div>
         </div>
     </div>
+    <div id ="popup">
+        <h1>Hello world</h1>
+    </div>
 </body>
 </html>
+
