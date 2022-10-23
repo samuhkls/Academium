@@ -9,12 +9,12 @@
 
 #Container{
     background: #000000;
-    background-position: 100% 100%;
+    background-position: 100% 50%;
     background-image: url("../Src/background.jpg");
     background-repeat: no-repeat;
-    background-size: 60%;
+    background-size: 85%;
     padding-bottom: 70px;
-    clip-path: circle(400% at 46% -660%);
+    clip-path: ellipse(170% 56% at 35% 41%);
 }
 
 .navbar{
@@ -23,6 +23,7 @@
     height: 60px;
     flex-direction: row;
     align-items: flex-start;
+    padding-top: 1%;
     
 }
 
@@ -47,9 +48,25 @@
 }
 
 #LoginButton{
-    padding: 0px 25px;
+    position: relative;
+    display: block;
+    padding: 0px 30px 0px 25px;
     margin: 5px 15px 5px 15px;
-    font-size: 120%
+    background-color: #ce160f00;
+    border: solid 1px #ce160f;
+    color: #ce160f;
+    font-size: 120%;
+    text-transform: uppercase;
+    transition-duration: 0.6s;
+}
+
+
+#LoginButton:hover{
+    color: #000000;
+    background-color: #ce160f;
+    padding: 0px 20px 0px 20px;
+    margin: 8px 20px 8px 10px;
+    cursor: pointer;
 }
 
 .headerDivLogo, .headerDivButton{
@@ -84,7 +101,6 @@
     flex-wrap: nowrap;
     border: solid 1px;
     border-radius: 5px;
-    min-width: 400px;
     max-width: 700px;
     margin-bottom: 30px;
     align-items: center;
@@ -99,6 +115,7 @@
 }
 
 #InputAreaCourses{
+    display: inline-block;
     border: none;
     font-size: 150%;
     width: 100%;
@@ -106,13 +123,28 @@
     padding: 10px 10px 10px 10px;
     margin:5px;
     background-color: #f5dcdc;
+    transition-duration: 2s;
 }
+
 #InputAreaCourses:focus{
     outline: none;
+}
+
+#InputAreaCourses:hover{
+    border-bottom: #000000 1px solid;   
 }
 
 #BuscarCourse{
     padding: 10px 35px 10px 35px;
     margin: 5px;
     font-size: 150%;
+    position: relative;
+    display: block;
+    background-color: #ce160f00;
+    border: solid 1px #ce160f;
+    color: #ce160f;
+    font-size: 120%;
+    text-transform: uppercase;
+    transition-duration: 0.6s;
 }
+
