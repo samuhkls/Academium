@@ -7,12 +7,23 @@
     font-family: 'Tisa Sans Pro', sans-serif;
 }
 
+#Container{
+    background: #000000;
+    background-position: 100% 100%;
+    background-image: url("../Src/background.jpg");
+    background-repeat: no-repeat;
+    background-size: 60%;
+    padding-bottom: 70px;
+    clip-path: circle(400% at 46% -660%);
+}
+
 .navbar{
     display: flex;
     width: 100%;
     height: 60px;
     flex-direction: row;
     align-items: flex-start;
+    
 }
 
 .headerDivLogo{
@@ -63,6 +74,10 @@
     margin-bottom: 10px;
 }
 
+#TextoTitu, #TextoAuxilio{
+    color: #f5dcdc;
+}
+
 .SearchAreaDiv{
     display: flex;
     flex-direction: row;
@@ -73,12 +88,14 @@
     max-width: 700px;
     margin-bottom: 30px;
     align-items: center;
+    background-color: #f5dcdc;
 }
 
 #LupaEmoji{
     display: flex;
-    width: 5%;
-    height: 5%;
+    padding-left: 2%;
+    width: 6%;
+    height: 6%;
 }
 
 #InputAreaCourses{
@@ -87,7 +104,11 @@
     width: 100%;
     max-width: 600px;
     padding: 10px 10px 10px 10px;
-    margin:5px
+    margin:5px;
+    background-color: #f5dcdc;
+}
+#InputAreaCourses:focus{
+    outline: none;
 }
 
 #BuscarCourse{
