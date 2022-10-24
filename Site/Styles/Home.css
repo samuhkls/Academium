@@ -188,8 +188,10 @@
     flex-direction: column;
     width: 400px;
 }
-#txtTitu, #txtComplementar{
-    text-shadow: 3px 3px 6px #00000070;
+
+
+#txtComplementar{
+    text-shadow: 1px 1px 15px #000000;
 }
 
 #txtTitu{
@@ -221,4 +223,8 @@
     max-width: 60%;
     min-width: 250px;
     margin: 40px;
+}
+
+#buttonPageCouses{
+    
 }
