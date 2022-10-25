@@ -43,6 +43,7 @@
 }
 
 .HeaderLogoText{
+    margin-left: 10px;
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
