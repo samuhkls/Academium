@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
 @import url('http://fonts.cdnfonts.com/css/tisa-sans-pro');
 @import url('http://fonts.cdnfonts.com/css/genty-demo');
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&family=Raleway:wght@400;800&display=swap');
 
 
 *{
@@ -39,7 +39,7 @@
 .HeaderLogo{
     width: 50px;
     height: 50px;
-    margin: 5px 15px 5px 10px;
+    margin: 5px;
 }
 
 .HeaderLogoText{
@@ -50,19 +50,18 @@
     text-decoration: none;
 }
 
-#HeaderLogoTextSpan{
-    color: #f5dcdc;
+.HeaderLogoTextSpan{
+    color: #FFFFFF;
     font-size: 130%;
-    font-family: 'Fredoka One', cursive;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 800;
 }
 
-#HeaderLogoTextPlus{
+.HeaderLogoTextPlus{
     color: #ce160f;
-    font-size: 150%;
+    font-size: 200%;
     font-family: 'Genty Demo', sans-serif;
 }
-
-
 
 .headerDivButton{
     display: flex;
@@ -173,6 +172,7 @@
     font-size: 130%;
     text-transform: uppercase;
     transition-duration: 0.3s;
+    cursor: pointer;
 }
 
 #BuscarCourse:hover{
@@ -259,3 +259,65 @@
     transition-duration: 0.2s;
 }
 
+footer{
+    display: flex;
+    flex-direction: column;
+    background-color: #111111;
+    padding-top: 40px;
+    align-items: center;
+    color: #FFFFFF;
+}
+
+.footer-content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.FooterP{   
+    text-align: center;
+    width: 50%;
+    font-size: 130%;
+    line-height: 30px;
+}
+
+.Sociais{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    text-decoration: none;
+    align-items: center;
+}
+
+.Sociais li{
+    margin: 25px 10px;
+    list-style: none;
+    align-items: center;
+}
+
+.Sociais a{
+    color: #FFFFFF;
+}
+
+.Sociais a i{
+    font-size: 25px;
+    transition: color 0.4s ease;
+}
+
+.Sociais a:hover i{
+    color: #ce160f;
+}
+
+.footer-bottom{
+    background-color: #080808;
+    width: 100%;
+    padding: 20px 0px;
+    text-align: center;
+}
+
+.footer-bottom p{
+    font-size: 110%;
+    word-spacing: 2px;
+    text-transform: capitalize;
+}
