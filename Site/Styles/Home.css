@@ -1,0 +1,323 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
+@import url('http://fonts.cdnfonts.com/css/tisa-sans-pro');
+@import url('http://fonts.cdnfonts.com/css/genty-demo');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&family=Raleway:wght@400;800&display=swap');
+
+
+*{
+    padding: 0px;
+    margin: 0px;
+    font-family: 'Tisa Sans Pro', sans-serif;
+}
+
+#Container{
+    background: #000000;
+    background-position: 100% 50%;
+    background-image: url("../Src/background.jpg");
+    background-repeat: no-repeat;
+    background-size: 85%;
+    padding-bottom: 70px;
+    clip-path: ellipse(170% 56% at 35% 41%);
+}
+
+.navbar{
+    display: flex;
+    width: 100%;
+    height: 60px;
+    flex-direction: row;
+    align-items: center;
+    padding-top: 1%;
+}
+
+.headerDivLogo{
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    height: 100%;
+}
+
+.HeaderLogo{
+    width: 50px;
+    height: 50px;
+    margin: 5px;
+}
+
+.HeaderLogoText{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    text-decoration: none;
+}
+
+.HeaderLogoTextSpan{
+    color: #FFFFFF;
+    font-size: 130%;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 800;
+}
+
+.HeaderLogoTextPlus{
+    color: #ce160f;
+    font-size: 200%;
+    font-family: 'Genty Demo', sans-serif;
+}
+
+.headerDivButton{
+    display: flex;
+    flex-direction: row;
+    justify-content: right;
+    height: 100%;
+}
+
+#LoginButton{
+    position: relative;
+    display: block;
+    padding: 0px 30px 0px 25px;
+    margin: 5px 15px 5px 15px;
+    background-color: #ce160f00;
+    border: solid 1px #ce160f;
+    color: #ce160f;
+    font-size: 120%;
+    text-transform: uppercase;
+    transition-duration: 0.6s;
+}
+
+
+#LoginButton:hover{
+    color: #000000;
+    letter-spacing: 2px;
+    background-color: #ce160f;
+    padding: 0px 20px 0px 20px;
+    margin: 8px 20px 8px 10px;
+    cursor: pointer;
+}
+
+#LoginButton:active{
+    color: #FFFFFF;
+}
+
+.headerDivLogo, .headerDivButton{
+    width: 50%;
+}
+
+.Content{
+    margin: 11% 10px 50px 10px;
+    margin-left: clamp(50px, 10%, 200px);
+    margin-right: clamp(50px, 10%, 200px);
+}
+
+#TextoTitu{
+    font-size: 270%;
+    font-weight: 800;
+    margin-bottom: 20px;
+}
+
+#TextoAuxilio{
+    font-size: 220%;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+#TextoTitu, #TextoAuxilio{
+    color: #f5dcdc;
+}
+
+.SearchAreaDiv{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    border: solid 1px;
+    border-radius: 5px;
+    max-width: 700px;
+    margin-bottom: 30px;
+    align-items: center;
+    background-color: #FFFFFF;
+}
+
+#LupaEmoji{
+    display: flex;
+    padding-left: 2%;
+    width: 6%;
+    height: 6%;
+}
+
+#InputAreaCourses{
+    display: inline-block;
+    border: none;
+    font-size: 150%;
+    width: 100%;
+    max-width: 600px;
+    padding: 10px 10px 10px 10px;
+    margin:5px;
+    background-color: #FFFFFF;
+    transition-duration: 2s;
+}
+
+#InputAreaCourses:focus{
+    outline: none;
+}
+
+#BuscarCourse{
+    padding: 10px 35px 10px 35px;
+    margin: 5px;
+    font-size: 150%;
+    position: relative;
+    display: block;
+    background-color: #da413b;
+    box-shadow: 2px 2px 5px #474747;
+    border: 1px solid #942a26;
+    border-radius: 4px;
+    color: #bbbbbb;
+    font-size: 130%;
+    text-transform: uppercase;
+    transition-duration: 0.3s;
+    cursor: pointer;
+}
+
+#BuscarCourse:hover{
+    background: #b1322d;
+    color: #FFFFFF;
+    box-shadow: 2px 2px 5px #9c9c9c;
+}
+
+.ContentText{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap-reverse;
+    margin: 8% 10px 50px 10px;
+    margin-left: clamp(70px, 15%, 180px);
+    margin-right: clamp(70px, 15%, 180px);
+
+}
+
+.ContentTextText{
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+}
+
+
+#txtTitu{
+    font-size: 250%;
+    font-weight: 800;
+    margin-bottom: 20px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+#txtComplementar{
+    font-size: 150%;
+    font-weight: 400;
+    margin-bottom: 20px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+#txtImpacto{
+    font-size: 150%;
+    font-weight: 600;
+    margin-bottom: 20px;
+    font-family: 'Montserrat', sans-serif;
+    padding: 15px 30px;
+}
+
+#imgLingaguens{
+    align-self: center;
+    height: auto;
+    width: 50%;
+    max-width: 60%;
+    min-width: 250px;
+    margin: 40px;
+}
+
+#buttonPageCourses{
+    font-size: 150%;
+    font-weight: 600;
+    font-family: 'Montserrat', sans-serif;
+    padding: 15px 30px;
+    background-color: #da413b;
+    box-shadow: 2px 2px 5px #474747;
+    border: 1px solid #942a26;
+    display: inline-block;
+    cursor: pointer;
+    transition-duration: 0.5s;
+    color: #FFFFFF;
+    text-transform: uppercase;
+}
+
+#buttonPageCourses:hover{
+    background: #b1322d;
+    color: #bbbbbb;
+    box-shadow: 2px 2px 5px #9c9c9c;
+    letter-spacing: 1px;
+}
+
+#buttonPageCourses:active{
+    font-size: 155%;
+    color: #FFFFFF;
+    letter-spacing: 0px;
+    margin: 0px 15px;
+    transition-duration: 0.2s;
+}
+
+footer{
+    display: flex;
+    flex-direction: column;
+    background-color: #111111;
+    padding-top: 40px;
+    align-items: center;
+    color: #FFFFFF;
+}
+
+.footer-content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.FooterP{   
+    text-align: center;
+    width: 50%;
+    font-size: 130%;
+    line-height: 30px;
+}
+
+.Sociais{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    text-decoration: none;
+    align-items: center;
+}
+
+.Sociais li{
+    margin: 25px 10px;
+    list-style: none;
+    align-items: center;
+}
+
+.Sociais a{
+    color: #FFFFFF;
+}
+
+.Sociais a i{
+    font-size: 25px;
+    transition: color 0.4s ease;
+}
+
+.Sociais a:hover i{
+    color: #ce160f;
+}
+
+.footer-bottom{
+    background-color: #080808;
+    width: 100%;
+    padding: 20px 0px;
+    text-align: center;
+}
+
+.footer-bottom p{
+    font-size: 110%;
+    word-spacing: 2px;
+    text-transform: capitalize;
+}
