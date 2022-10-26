@@ -1,8 +1,8 @@
 CREATE TABLE `usuarios` (
   `id_user` int PRIMARY KEY AUTO_INCREMENT,
-  `usuario` char(50) UNIQUE,
-  `password` char(50),
-  `email` char(255)
+  `usuario` char(50) UNIQUE NOT NULL,
+  `password` char(50) NOT NULL,
+  `email` char(255) NOT NULL
 );
 
 CREATE TABLE `alura_cursos` (
