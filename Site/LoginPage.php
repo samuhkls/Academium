@@ -29,11 +29,10 @@
             <div class = "texto">
                 
                 <h1 class = "titulo">Fazer Login</h1>
-                
-                <input class = "loginInput" placeholder="Email">
-                
-                <input class = "loginInput" placeholder= "Senha" type="password">
-                
+                <form action="">
+                    <input name="login" type="text" class = "loginInput" placeholder="Email">
+                    <input name="senha" type="password" class = "loginInput" placeholder= "Senha" type="password">
+                </form>
             </div>
             
             <div class = "btnContainer">
@@ -49,24 +48,19 @@
                 <img src = ".\Src\Novo Logo Academium Transparente.png" class = "imagemLogo">
             </div>
 
-            <div class = "texto">
+            
+            <form action='' class = "texto">
                 
                 <h1 class = "titulo">Crie sua conta Academium+</h1>
-
-                <input class = "loginInput" name placeholder="Digite seu nome">
+                <input name="loginregis" type="text" class = "loginInput" placeholder="Digite seu nome">
+                <input name="emailregis" type="email" class = "loginInput" placeholder="Email">
+                <input name="senharegis" type="password" class = "loginInput" placeholder= "Senha">
+                <input name="senharegis" type="password" class = "loginInput" placeholder= "Digite a sua senha novamente">
                 
-                <input class = "loginInput" placeholder="Email">
-                
-                <input class = "loginInput" placeholder= "Senha" type="password">
-
-                <input class = "loginInput" placeholder= "Digite a sua senha novamente" type = "password">
-                
-            </div>
-            
             <div class = "btnContainer">
-                <button id = "btnregistrar" class="botoes" onclick="fechaRegistrar()">Registrar</button>
-            </div>
-    </div>
+                <button id = "btnregistrar" class="botoes" 'onclick="fechaRegistrar()">Registrar</button>
+        
+        </form>
 </body>
 <script src="./Scripts/registrarPopup.js"></script>
 </html>
