@@ -1,3 +1,5 @@
+#Instalações dos pacotes
+
 #Instale o pip ( python -m ensurepip )
 #De upgrade no pip (pip install --upgrade pip)
 #instale o selenium ( pip install selenium )
@@ -24,7 +26,7 @@ conexao = mysql.connector.connect(
 cursor = conexao.cursor()
 
 
-#Intalando o ChromeDriver
+#Instalando o ChromeDriver
 servico = Service(ChromeDriverManager().install())
 driver = webdriver.Chrome(service=servico)
 
@@ -68,7 +70,7 @@ for x in range(0, len(link_curso), 1):
     horas_cursos[x] = horas_cursos[x].lstrip()
     horas_cursos[x] = horas_cursos[x].rstrip()
 
-#Abrindo cada guia dos cursos para pegar as notas dos cursosv
+#Abrindo cada guia dos cursos para pegar as notas dos cursos
 for x in range(0, len(links_cursos), 1):
     #Abrindo a guia dos cursos
     url = links_cursos[x]
@@ -78,7 +80,7 @@ for x in range(0, len(links_cursos), 1):
     
     #Pegando as informações dos cursos (avaliação, tópico do curso, nome do instrutor)
     try:
-        div_mae = driver.find_element(By.XPATH, '/html/body/div[2]/div[1]/div/div[2]')
+        div_mae = driver.find_element(By.XPATH, '/html/body')
         html_content = div_mae.get_attribute("outerHTML")
         soup = BeautifulSoup(html_content, 'html.parser')
     except:
@@ -87,7 +89,7 @@ for x in range(0, len(links_cursos), 1):
     #Pega a avaliação do curso  
     try:
         avaliacao = soup.find_all("p", class_="courseInfo-card-wrapper-infos")
-        avaliacao_cursos[x] = avaliacao[4].getText()
+        avaliacao_cursos[x] = avaliacao[2].getText()
         
     except:
         print("ERROR / CourseGradeNotFound")
@@ -95,7 +97,7 @@ for x in range(0, len(links_cursos), 1):
         
     #Coleta o tópico do curso
     try:
-        topico = soup.find("span", class_="lista-guides__nome")
+        topico = soup.find("span", class_="breadcrumb__subcategory")
         topico_cursos[x] = topico.getText()
     except:
         print("ERROR / SubjectNotFound")
@@ -103,7 +105,7 @@ for x in range(0, len(links_cursos), 1):
         
     #Adquire o nome do instrutor
     try:
-        instrutor = soup.find("h3", class_="instrutores-item-nome")
+        instrutor = soup.find("h3", class_="instructor-title--name")
         instrutor_curso[x] = instrutor.getText()
         instrutor_curso[x] = instrutor_curso[x].strip()
     except:
