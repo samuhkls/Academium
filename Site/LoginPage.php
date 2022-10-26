@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -5,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Entrar no Academium+</title>
-    <link rel="stylesheet" href="Styles\login.css">
+    <link rel="stylesheet" href="Styles\login.scss">
     <link rel="shortcut icon" href=".\Src\icon Academium.ico">
 </head>
 <body>
@@ -51,7 +53,7 @@
                 
                 <h1 class = "titulo">Crie sua conta Academium+</h1>
 
-                <input class = "loginInput" placeholder="Digite seu nome">
+                <input class = "loginInput" name placeholder="Digite seu nome">
                 
                 <input class = "loginInput" placeholder="Email">
                 

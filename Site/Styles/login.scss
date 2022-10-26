@@ -38,7 +38,8 @@ img{
     width: 500px;
     height: 450px;
     background: #fff;
-    
+    box-shadow: 0px 0px 15px #111111;
+    opacity: 0.93;
 }
 
 .imgContainer{
@@ -79,10 +80,6 @@ input{
     transition: border 2s ease-in;
 }
 
-input:hover{
-    border: 1px solid black;
-}
-
 .btnContainer{
     display: flex;
     justify-content: center;
@@ -111,7 +108,7 @@ input:hover{
     font-size: 16px;
     display: inline-block;
     cursor: pointer;
-    transition: all 1250ms cubic-bezier(0.19, 1, 0.22, 1);
+    transition: all 200ms cubic-bezier(0.19, 1, 0.22, 1);
     
 }
 
@@ -142,4 +139,6 @@ input:hover{
     width: 500px;
     height: 550px;
     background: rgb(255, 255, 255);
+    box-shadow: 0px 0px 15px #111111;
+    opacity: 0.93;
 }
