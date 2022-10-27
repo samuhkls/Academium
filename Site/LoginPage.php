@@ -1,3 +1,25 @@
+<?php
+
+    if(isset($_POST['registrar']))
+    {
+        include_once('./ConexaoBd/conex.php');
+
+        $loginrg = $_POST['loginregis'];
+        $emailrg = $_POST['emailregis'];
+        $senha1rg = $_POST['senharegis1'];
+        $senha2rg = $_POST['senharegis2'];
+        
+        $result = msqli_query($conexao, 'INSERT INTO usuarios (usuario, password, email) VALUES ($loginrg, $emailrg, $senha1rg)');
+
+        // print_r($_POST['loginregis']);
+        // print_r($_POST['emailregis']);
+        // print_r($_POST['senharegis1']);
+        // print_r($_POST['senharegis2']);
+        
+    }
+
+?>
+
 
 
 <!DOCTYPE html>
@@ -29,16 +51,19 @@
             <div class = "texto">
                 
                 <h1 class = "titulo">Fazer Login</h1>
-                <form action="">
+                <form action="LoginPage.php" method="POST">
                     <input name="login" type="text" class = "loginInput" placeholder="Email">
                     <input name="senha" type="password" class = "loginInput" placeholder= "Senha" type="password">
-                </form>
+                
             </div>
             
             <div class = "btnContainer">
-                <button class="botoes">Entrar</button>
+                <button type="submit" name="login" class="botoes">Entrar</button>
+                </form>
+
                 <button id = "btnregistrar" class="botoes" onclick="abreRegistrar()">Registrar</button>
             </div>
+                
         </div>
     </div>
     <div class ="popup">
@@ -49,18 +74,18 @@
             </div>
 
             
-            <form action='' class = "texto">
+            <form action='' action="LoginPage.php" method="POST" class = "texto">
                 
                 <h1 class = "titulo">Crie sua conta Academium+</h1>
-                <input name="loginregis" type="text" class = "loginInput" placeholder="Digite seu nome">
-                <input name="emailregis" type="email" class = "loginInput" placeholder="Email">
-                <input name="senharegis" type="password" class = "loginInput" placeholder= "Senha">
-                <input name="senharegis" type="password" class = "loginInput" placeholder= "Digite a sua senha novamente">
+                <input name="loginregis" type="text" class = "loginInput" placeholder="Digite seu nome" require>
+                <input name="emailregis" type="email" class = "loginInput" placeholder="Email" require>
+                <input name="senharegis1" type="password" class = "loginInput" placeholder= "Senha" require>
+                <input name="senharegis2" type="password" class = "loginInput" placeholder= "Digite a sua senha novamente" require>
                 
-            <div class = "btnContainer">
-                <button id = "btnregistrar" class="botoes" 'onclick="fechaRegistrar()">Registrar</button>
-        
-        </form>
+                <div class = "btnContainer">
+                    <button type="submit" name="registrar" id = "btnregistrar" class="botoes" 'onclick="fechaRegistrar()">Registrar</button>
+                </div>
+            </form>
 </body>
 <script src="./Scripts/registrarPopup.js"></script>
 </html>
