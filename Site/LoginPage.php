@@ -1,50 +1,41 @@
 
 <?php
+#    if(isset($_POST['login']) && $_POST['login']!= '' && $_POST['login'] != null){
+#        include_once('./ConexaoBd/conex.php');
+#        $email = $_POST['email'];
+#        $senha = $_POST['senha'];
+#
+#        $checklogin = mysqli_query($conexao, "SELECT email, pasword FROM usuarios WHERE email = '$email' AND pasword = '$senha';")
+#        if ($checklogin ==)
+#
+#
+#    }
 
-    
-    $mensagem_de_erro = "Não foi possível completar o cadastro:<br>";
     if(isset($_POST['registrar']) && $_POST['registrar']!= '' && $_POST['registrar'] != null){
-        echo "passou do botao";
-
-        if ($_POST['loginregis'] != ''){
-            echo "passou do login <br>";
-
+        if ($_POST['nomeregis'] != ''){
             if ($_POST['emailregis'] != ''){
-                echo "passou do email <br>";
-
                 if ($_POST['senharegis1'] != ''){
-                    echo "passou da senha 1 <br>";
-
                     if ($_POST['senharegis2'] != ''){
-                        echo "passou da senha 2 <br>";
-
                         if ($_POST['senharegis1'] == $_POST['senharegis2']){
-                            echo "passou da confirmação da senha <br>";
 
 
                             include_once('./ConexaoBd/conex.php');
-                            echo "integrou a conexao <br>";
-                            $loginrg = $_POST['loginregis'];
                             $emailrg = $_POST['emailregis'];
+                            $nomerg = $_POST['nomeregis'];
                             $senha1rg = $_POST['senharegis1'];
                             $senha2rg = $_POST['senharegis2'];
-
-                            print_r($loginrg);
-                            print_r($emailrg);
-                            print_r($senha1rg);
-                            print_r($senha2rg);
                             
-                            echo "salvou tudo <br>";
-                            $result = mysqli_query($conexao, "INSERT INTO usuarios (usuario, pasword, email) VALUES ('$loginrg','$senha1rg','$emailrg');");
-                            if($result == TRUE){
-                                echo "Rafinha estava certo <br>";
-                            } else{
-                                echo "Rafinha estava certo.2 <br>";
+                            $checkregisuser = ""; #mysqli_query($conexao, "SELECT email FROM usuarios WHERE email = '$emailrg';");
+
+                            if ($checkregisuser == ""){
+                                $result = mysqli_query($conexao, "INSERT INTO usuarios (email, nome_user, pasword) VALUES ('$emailrg', '$nomerg','$senha1rg');");
+
+                                sleep(1);
+
+                                mysqli_close($conexao);
+                                header('Location: LoginPage.php');
                             }
-                            sleep(1);
-                            echo "Comando executado <br>";
-                            mysqli_close($conexao);
-                            header('Location: LoginPage.php');
+                            
                             
                         }else{
                             echo"- As duas senhas precisam se repetir <br>";
@@ -59,7 +50,7 @@
                 echo"- Digite o email <br>";
             }
         }else{
-            print_r("- Digite o login <br>");
+            print_r("- Digite o seu nome <br>");
         }
         
     }
@@ -98,13 +89,13 @@
                 
                 <h1 class = "titulo">Fazer Login</h1>
                 <form action="LoginPage.php" method="POST">
-                    <input name="login" type="text" class = "loginInput" placeholder="Email">
+                    <input name="email" type="text" class = "loginInput" placeholder="Email">
                     <input name="senha" type="password" class = "loginInput" placeholder= "Senha" type="password">
                 
             </div>
             
             <div class = "btnContainer">
-                <button type="submit" name="login" class="botoes">Entrar</button>
+                <button type="submit" name="login" value="login" class="botoes">Entrar</button>
                 </form>
 
                 <button id = "btnregistrar" class="botoes" onclick="abreRegistrar()">Registrar</button>
@@ -123,13 +114,13 @@
             <form action="LoginPage.php" method="POST" class = "texto">
                 
                 <h1 class = "titulo">Crie sua conta<br>Academium+</h1>
-                <input name="loginregis" type="text" class = "loginInput" placeholder="Digite seu nome">
-                <input name="emailregis" type="email" class = "loginInput" placeholder="Email">
-                <input name="senharegis1" type="password" class = "loginInput" placeholder= "Senha">
-                <input name="senharegis2" type="password" class = "loginInput" placeholder= "Digite a sua senha novamente">
+                <input name="nomeregis" type="text" class = "loginInput" placeholder="Digite seu nome" required>
+                <input name="emailregis" type="email" class = "loginInput" placeholder="Email" required>
+                <input name="senharegis1" type="password" class = "loginInput" placeholder= "Senha" required>
+                <input name="senharegis2" type="password" class = "loginInput" placeholder= "Digite a sua senha novamente" required>
                 
                 <div class = "btnContainer">
-                    <button type="submit" name="registrar" value="registrar" id = "btnregistrar" class="botoes" 'onclick="fechaRegistrar()">Registrar</button>
+                    <button type="submit" name="registrar" value="registrar" id = "btnregistrar" class="botoes" 'onclick="fechaRegistrar()"> <?php echo "Registro"; ?> </button>
                 </div>
             </form>
 </body>
