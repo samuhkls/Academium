@@ -1,8 +1,10 @@
+CREATE DATABASE academiumbd;
+
 CREATE TABLE `usuarios` (
   `id_user` int PRIMARY KEY AUTO_INCREMENT,
-  `usuario` char(50) UNIQUE,
-  `password` char(50),
-  `email` char(255)
+  `email` char(255) UNIQUE NOT NULL,
+  `nome_user` char(50)  NOT NULL,
+  `pasword` char(50) NOT NULL
 );
 
 CREATE TABLE `alura_cursos` (
@@ -17,6 +19,6 @@ CREATE TABLE `alura_cursos` (
 );
 
 CREATE TABLE `cursos_favoritados` (
-  `usuario` char(50),
+  `email` char(50),
   `id_curso` int
 );

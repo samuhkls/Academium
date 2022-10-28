@@ -38,7 +38,8 @@ img{
     width: 500px;
     height: 450px;
     background: #fff;
-    
+    box-shadow: 0px 0px 15px #111111;
+    opacity: 0.93;
 }
 
 .imgContainer{
@@ -57,6 +58,7 @@ img{
 .titulo{
     justify-content: center;
 	display: flex;
+    text-align: center;
 }
 
 .loginInput{
@@ -77,10 +79,6 @@ input{
     margin-top: 15px;
     margin-left: 20px;
     transition: border 2s ease-in;
-}
-
-input:hover{
-    border: 1px solid black;
 }
 
 .btnContainer{
@@ -111,7 +109,7 @@ input:hover{
     font-size: 16px;
     display: inline-block;
     cursor: pointer;
-    transition: all 1250ms cubic-bezier(0.19, 1, 0.22, 1);
+    transition: all 200ms cubic-bezier(0.19, 1, 0.22, 1);
     
 }
 
@@ -140,6 +138,8 @@ input:hover{
 .boxpopup{
     border-radius: 20px;
     width: 500px;
-    height: 550px;
+    height: 600px;
     background: rgb(255, 255, 255);
+    box-shadow: 0px 0px 15px #111111;
+    opacity: 0.93;
 }
