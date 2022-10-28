@@ -3,7 +3,7 @@
     $dbHost = 'Localhost';
     $dbUser = 'root';
     $dbPassword = '';
-    $dbName = 'academiumbd';
+    $dbName = 'academium-bd';
 
     $conexao = new mysqli($dbHost, $dbUser, $dbPassword, $dbName);
 

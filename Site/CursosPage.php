@@ -54,13 +54,13 @@
                 <?php
                     while($user_data = mysqli_fetch_assoc($result)){
                         echo "<tr = class='lista'>";
-                        echo "<td = class = 'lista'>".$user_data['curso_nome']."</td>";
-                        echo "<td = class = 'lista' id = 'pequeno'>".$user_data['carga_horaria']."</td>";
-                        echo "<td = class = 'lista' id = 'pequeno'>".$user_data['preco_curso']."</td>";
-                        echo "<td = class = 'lista' >".$user_data['link_curso']."</td>";
-                        echo "<td = class = 'lista' id = 'pequeno'>".$user_data['avaliacao_curso']."</td>";
-                        echo "<td = class = 'lista' id = 'pequeno'>".$user_data['topico_curso']."</td>";
-                        echo "<td = class = 'lista' >".$user_data['instrutor']."</td>";
+                        echo "<td = class = 'lista' id = 'nome'>".$user_data['curso_nom']."</td>";
+                        echo "<td = class = 'lista' id = 'carga'>".$user_data['carga_horaria']."</td>";
+                        echo "<td = class = 'lista' id = 'preco'>".$user_data['preco_curso']."</td>";
+                        echo "<td = class = 'lista' id = 'link' >".$user_data['link_curso']."</td>";
+                        echo "<td = class = 'lista' id = 'avaliacao'>".$user_data['avaliacao_curso']."</td>";
+                        echo "<td = class = 'lista' id = 'topico'>".$user_data['topico_curso']."</td>";
+                        echo "<td = class = 'lista' id = 'instrutor' >".$user_data['instrutor']."</td>";
 
                     }
                     

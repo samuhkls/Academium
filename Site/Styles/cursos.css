@@ -38,8 +38,9 @@ body{
     border-right: 2px solid black;
 }
 
-#pequeno{
-    padding: 1px 50px 25px 1px;
+#nome{
+    max-width: 200px;
+    width: 10%;
 }
 
 #InputAreaCourses{
