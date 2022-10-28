@@ -36,6 +36,12 @@
                             
                             echo "salvou tudo <br>";
                             $result = mysqli_query($conexao, "INSERT INTO usuarios (usuario, pasword, email) VALUES ('$loginrg','$senha1rg','$emailrg');");
+                            if($result == TRUE){
+                                echo "Rafinha estava certo <br>";
+                            } else{
+                                echo "Rafinha estava certo.2 <br>";
+                            }
+                            sleep(1);
                             echo "Comando executado <br>";
                             mysqli_close($conexao);
                             header('Location: LoginPage.php');
