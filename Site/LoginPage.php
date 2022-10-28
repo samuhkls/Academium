@@ -1,20 +1,60 @@
+
 <?php
 
-    if(isset($_POST['registrar']))
-    {
-        include_once('./ConexaoBd/conex.php');
+    
+    $mensagem_de_erro = "Não foi possível completar o cadastro:<br>";
+    if(isset($_POST['registrar']) && $_POST['registrar']!= '' && $_POST['registrar'] != null){
+        echo "passou do botao";
 
-        $loginrg = $_POST['loginregis'];
-        $emailrg = $_POST['emailregis'];
-        $senha1rg = $_POST['senharegis1'];
-        $senha2rg = $_POST['senharegis2'];
-        
-        $result = msqli_query($conexao, 'INSERT INTO usuarios (usuario, password, email) VALUES ($loginrg, $emailrg, $senha1rg)');
+        if ($_POST['loginregis'] != ''){
+            echo "passou do login <br>";
 
-        // print_r($_POST['loginregis']);
-        // print_r($_POST['emailregis']);
-        // print_r($_POST['senharegis1']);
-        // print_r($_POST['senharegis2']);
+            if ($_POST['emailregis'] != ''){
+                echo "passou do email <br>";
+
+                if ($_POST['senharegis1'] != ''){
+                    echo "passou da senha 1 <br>";
+
+                    if ($_POST['senharegis2'] != ''){
+                        echo "passou da senha 2 <br>";
+
+                        if ($_POST['senharegis1'] == $_POST['senharegis2']){
+                            echo "passou da confirmação da senha <br>";
+
+
+                            include_once('./ConexaoBd/conex.php');
+                            echo "integrou a conexao <br>";
+                            $loginrg = $_POST['loginregis'];
+                            $emailrg = $_POST['emailregis'];
+                            $senha1rg = $_POST['senharegis1'];
+                            $senha2rg = $_POST['senharegis2'];
+
+                            print_r($loginrg);
+                            print_r($emailrg);
+                            print_r($senha1rg);
+                            print_r($senha2rg);
+                            
+                            echo "salvou tudo <br>";
+                            $result = mysqli_query($conexao, "INSERT INTO usuarios (usuario, pasword, email) VALUES ('$loginrg','$senha1rg','$emailrg');");
+                            echo "Comando executado <br>";
+                            mysqli_close($conexao);
+                            header('Location: LoginPage.php');
+                            
+                        }else{
+                            echo"- As duas senhas precisam se repetir <br>";
+                        }
+                    }else{
+                        echo"- Repita a senha a senha <br>";
+                    }
+                }else{
+                    echo"- Digite a senha <br>";
+                }
+            }else{
+                echo"- Digite o email <br>";
+            }
+        }else{
+            print_r("- Digite o login <br>");
+        }
         
     }
 
@@ -74,16 +114,16 @@
             </div>
 
             
-            <form action='' action="LoginPage.php" method="POST" class = "texto">
+            <form action="LoginPage.php" method="POST" class = "texto">
                 
-                <h1 class = "titulo">Crie sua conta Academium+</h1>
-                <input name="loginregis" type="text" class = "loginInput" placeholder="Digite seu nome" require>
-                <input name="emailregis" type="email" class = "loginInput" placeholder="Email" require>
-                <input name="senharegis1" type="password" class = "loginInput" placeholder= "Senha" require>
-                <input name="senharegis2" type="password" class = "loginInput" placeholder= "Digite a sua senha novamente" require>
+                <h1 class = "titulo">Crie sua conta<br>Academium+</h1>
+                <input name="loginregis" type="text" class = "loginInput" placeholder="Digite seu nome">
+                <input name="emailregis" type="email" class = "loginInput" placeholder="Email">
+                <input name="senharegis1" type="password" class = "loginInput" placeholder= "Senha">
+                <input name="senharegis2" type="password" class = "loginInput" placeholder= "Digite a sua senha novamente">
                 
                 <div class = "btnContainer">
-                    <button type="submit" name="registrar" id = "btnregistrar" class="botoes" 'onclick="fechaRegistrar()">Registrar</button>
+                    <button type="submit" name="registrar" value="registrar" id = "btnregistrar" class="botoes" 'onclick="fechaRegistrar()">Registrar</button>
                 </div>
             </form>
 </body>
