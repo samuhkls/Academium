@@ -31,7 +31,7 @@ servico = Service(ChromeDriverManager().install())
 driver = webdriver.Chrome(service=servico)
 
 #URL da Alura
-url = "https://www.alura.com.br/planos-cursos-online"
+url = "https://www.alura.com.br/cursos-online-mobile"
 driver.get(url)
 time.sleep(1)
 

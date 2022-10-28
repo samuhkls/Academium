@@ -13,45 +13,61 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cursos Academium</title>
+    <link rel="stylesheet" href="Styles\cursos.css">
 </head>
-<body>
-    <h1>hello world</h1>
-    
-    <div>
-    <table class="table">
-        
-        <thead>
-            <tr>
-            <th scope="col">id_curso</th>
-            <th scope="col">curso_nome</th>
-            <th scope="col">carga_horaria</th>
-            <th scope="col">preco_curso</th>
-            <th scope="col">link_curso</th>
-            <th scope="col">avaliacao_curso</th>
-            <th scope="col">topico_curso</th>
-            <th scope="col">instrutor</th>
-            <th scope="col">...</th>
-            </tr>
-        </thead>
-        <tbody>
-            <?php
-                while($user_data = mysqli_fetch_assoc($result)){
-                    echo "<tr>";
-                    echo "<td>".$user_data['id_curso']."</td>";
-                    echo "<td>".$user_data['curso_nome']."</td>";
-                    echo "<td>".$user_data['carga_horaria']."</td>";
-                    echo "<td>".$user_data['preco_curso']."</td>";
-                    echo "<td>".$user_data['link_curso']."</td>";
-                    echo "<td>".$user_data['avaliacao_curso']."</td>";
-                    echo "<td>".$user_data['topico_curso']."</td>";
-                    echo "<td>".$user_data['instrutor']."</td>";
+<body>    
+    <div id="container">
 
-                }
-                
-            ?>
-        </tbody>
-  
-    </table>
+    <div class="Content">
+        <div class="SearchArea">
+            <p id="TextoTitu">Aqui você tem acesso a educação A+</p>
+            <p id="TextoAuxilio">Esses são os cursos que farão o seu upgrade</p>
+                <div class="SearchAreaDiv">
+                    <img src=".\Src\lupa.png" id="LupaEmoji">
+                    <input type="text" placeholder="Oque você quer procurar?" id="InputAreaCourses">
+                    <button id="BuscarCourse">Buscar</button>
+                </div>
+            </div>
+         </div>
+    </div>
+
+    <div class = "btnContainer">
+        <button id="botoes">Preço ↕</button>
+        <button id="botoes">Avaliação ↕</button>
+        <button id="botoes">Instrutor ↕</button>
+    </div>
+
+        <table class="table">
+            
+            <thead>
+                <tr>
+                <th class= "tableTlt">Nome</th>
+                <th class= "tableTlt">Carga Horária</th>
+                <th class= "tableTlt">Preço</th>
+                <th class= "tableTlt">Link</th>
+                <th class= "tableTlt">Avaliação</th>
+                <th class= "tableTlt">Tópico</th>
+                <th class= "tableTlt">Instrutor</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php
+                    while($user_data = mysqli_fetch_assoc($result)){
+                        echo "<tr = class='lista'>";
+                        echo "<td = class = 'lista'>".$user_data['curso_nome']."</td>";
+                        echo "<td = class = 'lista' id = 'pequeno'>".$user_data['carga_horaria']."</td>";
+                        echo "<td = class = 'lista' id = 'pequeno'>".$user_data['preco_curso']."</td>";
+                        echo "<td = class = 'lista' >".$user_data['link_curso']."</td>";
+                        echo "<td = class = 'lista' id = 'pequeno'>".$user_data['avaliacao_curso']."</td>";
+                        echo "<td = class = 'lista' id = 'pequeno'>".$user_data['topico_curso']."</td>";
+                        echo "<td = class = 'lista' >".$user_data['instrutor']."</td>";
+
+                    }
+                    
+                ?>
+            </tbody>
+    
+        </table>
 
     </div>
 
