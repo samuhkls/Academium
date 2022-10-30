@@ -10,9 +10,14 @@ body{
     width: 6%;
     height: 6%;
 }
+
+
+
 .SearchArea{
     background-color: #fff;
 }
+
+
 
 .tableTlt{
     font-family: 'Tisa Sans Pro', sans-serif;
@@ -21,26 +26,27 @@ body{
     padding-right: 200px;
 }
 
-.table{
-    margin-left: auto;
-    margin-right: auto;
+table{
     background-color: #fff;
-
+    table-layout: fixed;
+    width: 100%;
+    border-collapse: collapse;
+    border: 30px black;
 }
+
 
 .lista{
     font-family: 'Tisa Sans Pro', sans-serif;
     font-size: large;
     padding-right: 10px;
     padding-top: 10px;
-    border-collapse: collapse;
     border-bottom: 2px solid black;
     border-right: 2px solid black;
 }
 
-#nome{
-    max-width: 200px;
+#carga{
     width: 10%;
+    text-align: center;
 }
 
 #InputAreaCourses{
