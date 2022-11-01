@@ -1,5 +1,5 @@
 <?php
-    include_once('conex.php');
+    include_once('./ConexaoBd/conex.php');
 
     $sql = "SELECT * FROM alura_cursos ORDER BY id_curso DESC";
 

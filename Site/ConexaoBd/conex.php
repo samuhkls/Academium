@@ -1,6 +1,6 @@
 <?php
 
-    $dbHost = 'Localhost';
+    $dbHost = 'localhost';
     $dbUser = 'root';
     $dbPassword = '';
     $dbName = 'academium-bd';
