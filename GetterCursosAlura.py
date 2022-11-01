@@ -21,7 +21,7 @@ conexao = mysql.connector.connect(
     host='localhost',
     user='root',
     password='',
-    database='academium-bd',
+    database='academiumbd',
 )
 cursor = conexao.cursor()
 
