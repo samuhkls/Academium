@@ -13,14 +13,16 @@
     <div id="Container">
         <div class="navbar">
             <div class="headerDivLogo">
-                <a class="HeaderLogoText" href="">
+                <a class="HeaderLogoText" href="./HomePage.php">
                     <img src=".\Src\Novo Logo Academium Transparente - Off White.png" class="HeaderLogo" width="40">
                     <span class="HeaderLogoTextSpan">Academium</span>
                     <sup class="HeaderLogoTextPlus">+</sup>
                 </a>
             </div>
             <div class="headerDivButton">
-                <button id="LoginButton">Entrar</button>
+                <a href="./LoginPage.php">
+                    <button id="LoginButton"> Entrar </button> 
+                </a> 
             </div>
         </div>
         <div class="Content">
@@ -42,7 +44,7 @@
                 Aqui no Academium, você tem acesso a qualquer curso que precisar, de todas as áreas que puder
                 imaginar.<br><br>Se precisa achar conhecimento, venha ver or cursos disponíveis no nosso site
             </p>
-            <button id="buttonPageCourses">Vem de Academium</button>
+            <a href="./CursosPage.php"> <button id="buttonPageCourses">Vem de Academium</button> </a>
         </div>
         <img id="imgLingaguens" src=".\Src\lingaguens.png" alt="Logos de lingaguens">
     </div>
