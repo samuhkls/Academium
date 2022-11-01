@@ -3,6 +3,9 @@
 @import url('http://fonts.cdnfonts.com/css/genty-demo');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&family=Raleway:wght@400;800&display=swap');
 
+a{
+    text-decoration: none;
+}
 
 *{
     padding: 0px;
@@ -71,11 +74,14 @@
     height: 100%;
 }
 
+
 #LoginButton{
     position: relative;
     display: block;
     padding: 0px 30px 0px 25px;
     margin: 5px 15px 5px 15px;
+    width: 150px;
+    height: 50px;
     background-color: #ce160f00;
     border: solid 1px #ce160f;
     color: #ce160f;
@@ -89,8 +95,11 @@
     color: #000000;
     letter-spacing: 2px;
     background-color: #ce160f;
+    margin-top: 10px;
+    margin-right: 20px;
     padding: 0px 20px 0px 20px;
-    margin: 8px 20px 8px 10px;
+    width: 140px;
+    height: 45px;
     cursor: pointer;
 }
 
