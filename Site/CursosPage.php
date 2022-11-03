@@ -40,8 +40,8 @@
         <div class="">
             <?php
                 while($user_data = mysqli_fetch_assoc($result)){
-                    echo "<p>.$user_data['curso_nome'].</p>";
-                    
+                    echo "<p>".$user_data['curso_nome']."</p>";
+
                 }
             ?>
         </div>
