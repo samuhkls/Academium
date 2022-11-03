@@ -2,7 +2,7 @@
     include_once('./ConexaoBd/conex.php');
 
     $sql = "SELECT * FROM alura_cursos ORDER BY id_curso DESC";
-
+    
     $result = $conexao->query($sql);
 
 ?>
@@ -14,6 +14,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cursos Academium</title>
     <link rel="stylesheet" href="Styles\cursos.css">
+    <link rel="shortcut icon" href=".\Src\icon Academium.ico">
 </head>
 <body>    
     <div id="container">
@@ -36,8 +37,13 @@
              <button id="botoes">Instrutor ↕</button>
         </div>
             
-        <div>
-            
+        <div class="">
+            <?php
+                while($user_data = mysqli_fetch_assoc($result)){
+                    echo "<p>.$user_data['curso_nome'].</p>";
+                    
+                }
+            ?>
         </div>
 
         <div class = "tableContainer">
