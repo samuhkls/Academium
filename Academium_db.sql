@@ -1,4 +1,4 @@
-CREATE DATABASE academiumbd;
+CREATE DATABASE academium-bd;
 
 CREATE TABLE `usuarios` (
   `id_user` int PRIMARY KEY AUTO_INCREMENT,
