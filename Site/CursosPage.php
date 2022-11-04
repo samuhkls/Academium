@@ -32,23 +32,23 @@
         </div>
          
          <div class = "btnContainer">
-             <button id="botoes">Preço ↕</button>
-             <button id="botoes">Avaliação ↕</button>
+             <button id="botoes" onclick= "sortCarga()">Carga ↕</button>
+             <button id="botoes" onclick = "sortAvaliacao()">Avaliação ↕</button>
              <button id="botoes">Instrutor ↕</button>
         </div>
             
         <div class="">
             <?php
-                while($user_data = mysqli_fetch_assoc($result)){
-                    echo "<p>".$user_data['curso_nome']."</p>";
+                //while($user_data = mysqli_fetch_assoc($result)){
+                   // echo "<p>".$user_data['curso_nome']."</p>";
 
-                }
+               // }
             ?>
         </div>
 
         <div class = "tableContainer">
 
-            <table class="table">
+            <table id="cursos">
                 <caption>Cursos titulo</caption>
                 <thead>
                     <tr>
@@ -86,7 +86,7 @@
 </div>
     
     
-
+<script src = "./Scripts/sortCursos.js"> </script>
 
 </body>
 </html>
