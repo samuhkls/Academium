@@ -85,7 +85,7 @@
     </div>
 </div>
     
-    
+<script src="https://code.jquery.com/jquery-1.9.1.js"></script>
 <script src = "./Scripts/sortCursos.js"> </script>
 
 </body>
