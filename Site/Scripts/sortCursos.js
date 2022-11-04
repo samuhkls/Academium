@@ -1,57 +1,53 @@
 function sortAvaliacao() {
-    var table, rows, switching, i, x, y, shouldSwitch;
-    table = document.getElementById("cursos");
-    switching = true;
-    /*O loop*/
-    while (switching) {
-      switching = false;
-      rows = table.rows;
-      /*Loop por todas as linhas pulando a primeira*/
-      for (i = 1; i < (rows.length - 1); i++) {
-        shouldSwitch = false;
-        /*Pega os dois elementos que vao ser comparados:*/
-        x = rows[i].getElementsByTagName("TD")[4];
-        y = rows[i + 1].getElementsByTagName("TD")[4];
-        //troca as duas de lugar
-        if (Number(x.innerHTML) < Number(y.innerHTML)) {
-          //saindo do loop
-          shouldSwitch = true;
-          break;
-        }
-      }
-      if (shouldSwitch) {
-        /*Se trocar, faz e troca e muda a variável switch*/
-        rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
-        switching = true;
-      }
-    }
-  }
-  
-function sortCarga() {
-  var table, rows, switching, i, x, y, shouldSwitch;
-  table = document.getElementById("cursos");
-  switching = true;
-  /*O loop*/
-  while (switching) {
-    switching = false;
-    rows = table.rows;
-    /*Loop por todas as linhas pulando a primeira*/
-    for (i = 1; i < (rows.length - 1); i++) {
-      shouldSwitch = false;
-      /*Pega os dois elementos que vao ser comparados:*/
-      x = rows[i].getElementsByTagName("TD")[1];
-      y = rows[i + 1].getElementsByTagName("TD")[1];
-      //troca as duas de lugar
-      if (Number(x.innerHTML) < Number(y.innerHTML)) {
-        //saindo do loop
-        shouldSwitch = true;
+  var i, troca, b, checkTroca;
+  cursos = document.getElementById("avaliacao");
+  troca = true;
+  // loop da troca
+  while (troca) {
+    troca = false;
+    b = document.getElementsByTagName('p');
+    // loop por todos os elementos:
+    for (i = 0; i < (b.length - 1); i++) {
+
+      checkTroca = false;
+      // check para ver se o proximo item sera trocado
+      if (Number(b[i].innerHTML) < Number(b[i + 1].innerHTML)) {
+        // se o numero for maior executa a troca
+        checkTroca = true;
         break;
       }
     }
-    if (shouldSwitch) {
-      /*Se trocar, faz e troca e muda a variável switch*/
-      rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
-      switching = true;
+    if (checkTroca) {
+      // se a troca foi feita, marca troca como true para refazer o loop
+      b[i].parentNode.insertBefore(b[i + 1], b[i]);
+      troca = true;
+    }
+  }
+}
+  
+function sortCarga() {
+  var i, troca, b, checkTroca;
+  cursos = document.getElementById("carga");
+  troca = true;
+  // loop da troca
+  while (troca) {
+    troca = false;
+    b = document.getElementsByTagName('p');
+    // loop por todos os elementos:
+    for (i = 0; i < (b.length - 1); i++) {
+
+      checkTroca = false;
+      // check para ver se o proximo item sera trocado
+      if (Number(b[i].innerHTML) < Number(b[i + 1].innerHTML)) {
+        // se o numero for maior executa a troca
+        checkTroca = true;
+        break;
+      }
+    }
+    if (checkTroca) {
+      // se a troca foi feita, marca troca como true para refazer o loop
+      b[i].parentNode.insertBefore(b[i + 1], b[i]);
+      troca = true;
     }
   }
 }

@@ -37,12 +37,12 @@
              <button id="botoes">Instrutor ↕</button>
         </div>
             
-        <div class="">
+        <div class="teste">
             <?php
-                //while($user_data = mysqli_fetch_assoc($result)){
-                   // echo "<p>".$user_data['curso_nome']."</p>";
-
-               // }
+                while($user_data = mysqli_fetch_assoc($result)){
+                    echo "<p class='carga'>".$user_data['carga_horaria']."</p>";
+                    echo "<p class='avaliacao'>".$user_data['avaliacao_curso']."</p>";
+                }
             ?>
         </div>
 
@@ -68,7 +68,7 @@
                             echo "<tr = class='linha'>";
                             echo "<td = class = 'lista' id = 'nome'>".$user_data['curso_nome']."</td>";
                             echo "<td = class = 'lista' id = 'carga'>".$user_data['carga_horaria']."</td>";
-                            echo "<td = class = 'lista' id = 'preco'>".$user_data['preco_curso']."</td>";
+                            //echo "<td = class = 'lista' id = 'preco'>".$user_data['preco_curso']."</td>";
                             echo "<td = class = 'lista' id = 'link'>".$user_data['link_curso']."</td>";
                             echo "<td = class = 'lista' id = 'avaliacao'>".$user_data['avaliacao_curso']."</td>";
                             echo "<td = class = 'lista' id = 'topico'>".$user_data['topico_curso']."</td>";
