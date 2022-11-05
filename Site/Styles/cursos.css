@@ -1,7 +1,15 @@
 @import url('http://fonts.cdnfonts.com/css/tisa-sans-pro');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&family=Raleway:wght@400;800&display=swap');
 
 body{
-    background: #df5a58;
+    background: #a5120d;
+}
+
+.Content{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
 }
 
 #LupaEmoji{
@@ -11,43 +19,6 @@ body{
     height: 6%;
 }
 
-
-
-.SearchArea{
-    background-color: #fff;
-}
-
-
-
-.tableTlt{
-    font-family: 'Tisa Sans Pro', sans-serif;
-    font-size: large;
-    padding-bottom: 25px;
-    padding-right: 200px;
-}
-
-table{
-    background-color: #fff;
-    table-layout: fixed;
-    width: 100%;
-    border-collapse: collapse;
-    border: 30px black;
-}
-
-
-.lista{
-    font-family: 'Tisa Sans Pro', sans-serif;
-    font-size: large;
-    padding-right: 10px;
-    padding-top: 10px;
-    border-bottom: 2px solid black;
-    border-right: 2px solid black;
-}
-
-#carga{
-    width: 10%;
-    text-align: center;
-}
 
 #InputAreaCourses{
     display: inline-block;
@@ -65,28 +36,38 @@ table{
     font-size: 270%;
     font-weight: 800;
     margin-bottom: 20px;
+    color: #FFFFFF;
+    font-family: 'Montserrat', sans-serif;
 }
 
 #TextoAuxilio{
     font-size: 220%;
     font-weight: 500;
     margin-bottom: 10px;
+    
+    color: #FFFFFF;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .SearchAreaDiv{
     display: flex;
+    align-items: center;
     justify-content: center;
     flex-direction: row;
     flex-wrap: nowrap;
     border: solid 1px;
+    margin: auto;
     border-radius: 5px;
     max-width: 700px;
     align-items: center;
     background-color: #FFFFFF;
+    
 }
 
 .btnContainer{
     display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     padding-top: 15px;
@@ -96,6 +77,8 @@ table{
 #botoes{
     position: relative;
     display: block;
+    width: 35vh;
+    height: 30px;
     padding: 0px 30px 0px 25px;
     margin: 5px 15px 5px 15px;
     background-color: #fff;
@@ -103,7 +86,7 @@ table{
     color: #ce160f;
     font-size: 120%;
     text-transform: uppercase;
-    transition-duration: 0.6s;
+    transition-duration: 0.3s;
 }
 
 
@@ -111,12 +94,11 @@ table{
     color: #000000;
     letter-spacing: 2px;
     background-color: #ce160f;
-    padding: 0px 20px 0px 20px;
-    margin: 8px 20px 8px 10px;
     cursor: pointer;
 }
 
 #botoes:active{
+    transition-duration: 0.1s;
     color: #FFFFFF;
 }
 
@@ -128,15 +110,27 @@ table{
 
 .div_curso{
     display: inline;
-    width: 150px;
-    height: 300px;
-    padding: 20px 30px 20px 30px; 
+    width: 200px;
+    height: 320px;
+    padding: 0px 5px 0px 15px;
+    margin: 0px 15px 10px 15px;
+    background-color: #FFFFFF;
+    border-radius: 10px; 
+    font-family: 'Tisa Sans Pro', sans-serif;
+}
+
+.curso{
+    color: #000000;
+    font-size: 17px;
+    margin: 3px 0px 10px 0px;
+}
+
+#curso_nome{
+    margin: 5px 0px 12px 0px;
+    font-size: 19px;
+    font-weight: 600;
 }
 
 a{
     text-decoration: none;
-}
-
-p{
-    color: #000000;
 }

@@ -1,4 +1,5 @@
 <?php
+
     include_once('./ConexaoBd/conex.php');
 
     $sql = "SELECT * FROM alura_cursos ORDER BY id_curso DESC";
@@ -26,7 +27,6 @@
                 <div class="SearchAreaDiv">
                     <img src=".\Src\lupa.png" id="LupaEmoji">
                     <input type="text" placeholder="Oque você quer procurar?" id="InputAreaCourses">
-                    <button id="BuscarCourse">Buscar</button>
                 </div>
             </div>
         </div>
@@ -40,55 +40,19 @@
         <div class="resultados_cursos">
             <?php
                 while($user_data = mysqli_fetch_assoc($result)){
-                    echo "<div class='div_curso' target=about_blank>";
-                        echo "<a href='".$user_data['link_curso']."'>";
-                        echo "<p class= 'Titulo_curso'>".$user_data['curso_nome']."</p>";
-                        echo "<p class= 'curso_horas'>".$user_data['carga_horaria']."h</p>";
-                        echo "<p class= 'curso_preco'>R$ ".$user_data['preco_curso']."</p>";                    echo "<p class= 'Titulo_curso'>".$user_data['avaliacao_curso']."</p>";
-                        echo "<p class= 'c'>".$user_data['topico_curso']."</p>";
-                        echo "<p class= 'Titulo_curso'>".$user_data['instrutor']."</p>";
+                    echo "<div class='div_curso'>";
+                        echo "<a href='".$user_data['link_curso']."' target='_blank'>";
+                        echo "<p class='curso' id= 'curso_nome'>".$user_data['curso_nome']."</p>";
+                        echo "<p class='curso' id= 'curso_horas'>".$user_data['carga_horaria']."h</p>";
+                        echo "<p class='curso' id= 'curso_preco'>R$ ".$user_data['preco_curso']."</p>";
+                        echo "<p class='curso' id= 'curso_avaliacao'>".$user_data['avaliacao_curso']."</p>";
+                        echo "<p class='curso' id= 'curso_topico'>".$user_data['topico_curso']."</p>";
+                        echo "<p class='curso' id= 'curso_professor '>".$user_data['instrutor']."</p>";
                         echo "</a>";
                     echo "</div>";
                 }
             ?>
-        </div>
-
-        <div class = "tableContainer">
-
-            <table class="table">
-                <caption>Cursos titulo</caption>
-                <thead>
-                    <tr>
-                        <th class= "tableTlt">Nome</th>
-                        <th class= "tableTlt">Carga Horária</th>
-                        <th class= "tableTlt">Preço</th>
-                        <th class= "tableTlt">Link</th>
-                        <th class= "tableTlt">Avaliação</th>
-                        <th class= "tableTlt">Tópico</th>
-                        <th class= "tableTlt">Instrutor</th>
-                    </tr>
-                </thead>
-
-                <tbody>
-                    <?php
-                        while($user_data = mysqli_fetch_assoc($result)){
-                            echo "<tr = class='linha'>";
-                            echo "<td = class = 'lista' id = 'nome'>".$user_data['curso_nome']."</td>";
-                            echo "<td = class = 'lista' id = 'carga'>".$user_data['carga_horaria']."</td>";
-                            echo "<td = class = 'lista' id = 'preco'>".$user_data['preco_curso']."</td>";
-                            echo "<td = class = 'lista' id = 'link'>".$user_data['link_curso']."</td>";
-                            echo "<td = class = 'lista' id = 'avaliacao'>".$user_data['avaliacao_curso']."</td>";
-                            echo "<td = class = 'lista' id = 'topico'>".$user_data['topico_curso']."</td>";
-                            echo "<td = class = 'lista' id = 'instrutor' >".$user_data['instrutor']."</td>";
-                            
-                        }
-                        
-                    ?>
-                </tbody>
-                
-            </table>
-        </div>
-        
+        </div>        
     </div>
 </div>
     
