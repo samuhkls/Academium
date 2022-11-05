@@ -25,8 +25,11 @@
                 <p id="TextoAuxilio">Esses são os cursos que farão o seu upgrade</p>
                 <div class="SearchAreaDiv">
                     <img src=".\Src\lupa.png" id="LupaEmoji">
-                    <input type="text" placeholder="Oque você quer procurar?" id="InputAreaCourses">
+                    <form class = "searchbox">
+                        <input type="text" placeholder="Oque você quer procurar?" id="InputAreaCourses">
+                    </form>
                     <button id="BuscarCourse">Buscar</button>
+
                 </div>
             </div>
         </div>
@@ -40,8 +43,17 @@
         <div class="teste">
             <?php
                 while($user_data = mysqli_fetch_assoc($result)){
-                    echo "<p class='carga'>".$user_data['carga_horaria']."</p>";
-                    echo "<p class='avaliacao'>".$user_data['avaliacao_curso']."</p>";
+                    echo "<div id = 'carga container'>";
+                        echo "<p class='carga'>".$user_data['carga_horaria']."</p>";
+                    echo "</div>";
+
+                }
+                $result->data_seek(0); // reseta o fetch pra pegar os dados denovo
+
+                while($user_data = mysqli_fetch_assoc($result)){
+                    echo "<div id = 'avaliacao container'>";
+                        echo "<p class='avaliacao'>".$user_data['avaliacao_curso']."</p>";
+                    echo "</div>";
                 }
             ?>
         </div>
