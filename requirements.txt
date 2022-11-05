@@ -1,0 +1,5 @@
+ensurepip
+selenium
+beautifulsoup4
+webdriver_manager
+mysql-connector-python
