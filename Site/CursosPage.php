@@ -1,4 +1,5 @@
 <?php
+
     include_once('./ConexaoBd/conex.php');
 
     $sql = "SELECT * FROM alura_cursos ORDER BY id_curso DESC";
@@ -13,7 +14,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cursos Academium</title>
-    <link rel="stylesheet" href="Styles\cursos.css">
+    <link rel="stylesheet" href=".\Styles\cursos.css?v=<?php echo time(); ?>">
     <link rel="shortcut icon" href=".\Src\icon Academium.ico">
 </head>
 <body>    
@@ -28,7 +29,6 @@
                     <form class = "searchbox">
                         <input type="text" placeholder="Oque você quer procurar?" id="InputAreaCourses">
                     </form>
-                    <button id="BuscarCourse">Buscar</button>
 
                 </div>
             </div>
@@ -40,13 +40,19 @@
              <button id="botoes">Instrutor ↕</button>
         </div>
             
-        <div class="teste">
+        <div class="resultados_cursos">
             <?php
                 while($user_data = mysqli_fetch_assoc($result)){
-                    echo "<div id = 'carga container'>";
-                        echo "<p class='carga'>".$user_data['carga_horaria']."</p>";
+                    echo "<div class='div_curso'>";
+                        echo "<a href='".$user_data['link_curso']."' target='_blank'>";
+                        echo "<p class='curso' id= 'curso_nome'>".$user_data['curso_nome']."</p>";
+                        echo "<p class='curso' id= 'curso_horas'>".$user_data['carga_horaria']."h</p>";
+                        echo "<p class='curso' id= 'curso_preco'>R$ ".$user_data['preco_curso']."</p>";
+                        echo "<p class='curso' id= 'curso_avaliacao'>".$user_data['avaliacao_curso']."</p>";
+                        echo "<p class='curso' id= 'curso_topico'>".$user_data['topico_curso']."</p>";
+                        echo "<p class='curso' id= 'curso_professor '>".$user_data['instrutor']."</p>";
+                        echo "</a>";
                     echo "</div>";
-
                 }
                 $result->data_seek(0); // reseta o fetch pra pegar os dados denovo
 
@@ -56,44 +62,7 @@
                     echo "</div>";
                 }
             ?>
-        </div>
-
-        <div class = "tableContainer">
-
-            <table id="cursos">
-                <caption>Cursos titulo</caption>
-                <thead>
-                    <tr>
-                        <th class= "tableTlt">Nome</th>
-                        <th class= "tableTlt">Carga Horária</th>
-                        <th class= "tableTlt">Preço</th>
-                        <th class= "tableTlt">Link</th>
-                        <th class= "tableTlt">Avaliação</th>
-                        <th class= "tableTlt">Tópico</th>
-                        <th class= "tableTlt">Instrutor</th>
-                    </tr>
-                </thead>
-
-                <tbody>
-                    <?php
-                        while($user_data = mysqli_fetch_assoc($result)){
-                            echo "<tr = class='linha'>";
-                            echo "<td = class = 'lista' id = 'nome'>".$user_data['curso_nome']."</td>";
-                            echo "<td = class = 'lista' id = 'carga'>".$user_data['carga_horaria']."</td>";
-                            //echo "<td = class = 'lista' id = 'preco'>".$user_data['preco_curso']."</td>";
-                            echo "<td = class = 'lista' id = 'link'>".$user_data['link_curso']."</td>";
-                            echo "<td = class = 'lista' id = 'avaliacao'>".$user_data['avaliacao_curso']."</td>";
-                            echo "<td = class = 'lista' id = 'topico'>".$user_data['topico_curso']."</td>";
-                            echo "<td = class = 'lista' id = 'instrutor' >".$user_data['instrutor']."</td>";
-                            
-                        }
-                        
-                    ?>
-                </tbody>
-                
-            </table>
-        </div>
-        
+        </div>        
     </div>
 </div>
     

@@ -42,7 +42,7 @@
             <p id="txtTitu">Cursos de todos os tipos</h2>
             <p id="txtComplementar">
                 Aqui no Academium, você tem acesso a qualquer curso que precisar, de todas as áreas que puder
-                imaginar.<br><br>Se precisa achar conhecimento, venha ver or cursos disponíveis no nosso site
+                imaginar.<br><br>Se precisa achar conhecimento, venha ver os cursos disponíveis no nosso site
             </p>
             <a href="./CursosPage.php"> <button id="buttonPageCourses">Vem de Academium</button> </a>
         </div>
