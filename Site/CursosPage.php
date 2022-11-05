@@ -25,30 +25,42 @@
                 <p id="TextoAuxilio">Esses são os cursos que farão o seu upgrade</p>
                 <div class="SearchAreaDiv">
                     <img src=".\Src\lupa.png" id="LupaEmoji">
-                    <input type="text" placeholder="Oque você quer procurar?" id="InputAreaCourses">
+                    <form class = "searchbox">
+                        <input type="text" placeholder="Oque você quer procurar?" id="InputAreaCourses">
+                    </form>
                     <button id="BuscarCourse">Buscar</button>
+
                 </div>
             </div>
         </div>
          
          <div class = "btnContainer">
-             <button id="botoes">Preço ↕</button>
-             <button id="botoes">Avaliação ↕</button>
+             <button id="botoes" onclick= "sortCarga()">Carga ↕</button>
+             <button id="botoes" onclick = "sortAvaliacao()">Avaliação ↕</button>
              <button id="botoes">Instrutor ↕</button>
         </div>
             
-        <div class="">
+        <div class="teste">
             <?php
                 while($user_data = mysqli_fetch_assoc($result)){
-                    echo "<p>".$user_data['curso_nome']."</p>";
+                    echo "<div id = 'carga container'>";
+                        echo "<p class='carga'>".$user_data['carga_horaria']."</p>";
+                    echo "</div>";
 
+                }
+                $result->data_seek(0); // reseta o fetch pra pegar os dados denovo
+
+                while($user_data = mysqli_fetch_assoc($result)){
+                    echo "<div id = 'avaliacao container'>";
+                        echo "<p class='avaliacao'>".$user_data['avaliacao_curso']."</p>";
+                    echo "</div>";
                 }
             ?>
         </div>
 
         <div class = "tableContainer">
 
-            <table class="table">
+            <table id="cursos">
                 <caption>Cursos titulo</caption>
                 <thead>
                     <tr>
@@ -68,7 +80,7 @@
                             echo "<tr = class='linha'>";
                             echo "<td = class = 'lista' id = 'nome'>".$user_data['curso_nome']."</td>";
                             echo "<td = class = 'lista' id = 'carga'>".$user_data['carga_horaria']."</td>";
-                            echo "<td = class = 'lista' id = 'preco'>".$user_data['preco_curso']."</td>";
+                            //echo "<td = class = 'lista' id = 'preco'>".$user_data['preco_curso']."</td>";
                             echo "<td = class = 'lista' id = 'link'>".$user_data['link_curso']."</td>";
                             echo "<td = class = 'lista' id = 'avaliacao'>".$user_data['avaliacao_curso']."</td>";
                             echo "<td = class = 'lista' id = 'topico'>".$user_data['topico_curso']."</td>";
@@ -85,8 +97,8 @@
     </div>
 </div>
     
-    
-
+<script src="https://code.jquery.com/jquery-1.9.1.js"></script>
+<script src = "./Scripts/sortCursos.js"> </script>
 
 </body>
 </html>
