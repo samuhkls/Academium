@@ -119,3 +119,24 @@ table{
 #botoes:active{
     color: #FFFFFF;
 }
+
+.resultados_cursos{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.div_curso{
+    display: inline;
+    width: 150px;
+    height: 300px;
+    padding: 20px 30px 20px 30px; 
+}
+
+a{
+    text-decoration: none;
+}
+
+p{
+    color: #000000;
+}

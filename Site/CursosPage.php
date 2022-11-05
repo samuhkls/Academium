@@ -13,7 +13,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cursos Academium</title>
-    <link rel="stylesheet" href="Styles\cursos.css">
+    <link rel="stylesheet" href=".\Styles\cursos.css?v=<?php echo time(); ?>">
     <link rel="shortcut icon" href=".\Src\icon Academium.ico">
 </head>
 <body>    
@@ -37,11 +37,18 @@
              <button id="botoes">Instrutor ↕</button>
         </div>
             
-        <div class="">
+        <div class="resultados_cursos">
             <?php
                 while($user_data = mysqli_fetch_assoc($result)){
-                    echo "<p>".$user_data['curso_nome']."</p>";
-
+                    echo "<div class='div_curso' target=about_blank>";
+                        echo "<a href='".$user_data['link_curso']."'>";
+                        echo "<p class= 'Titulo_curso'>".$user_data['curso_nome']."</p>";
+                        echo "<p class= 'curso_horas'>".$user_data['carga_horaria']."h</p>";
+                        echo "<p class= 'curso_preco'>R$ ".$user_data['preco_curso']."</p>";                    echo "<p class= 'Titulo_curso'>".$user_data['avaliacao_curso']."</p>";
+                        echo "<p class= 'c'>".$user_data['topico_curso']."</p>";
+                        echo "<p class= 'Titulo_curso'>".$user_data['instrutor']."</p>";
+                        echo "</a>";
+                    echo "</div>";
                 }
             ?>
         </div>
