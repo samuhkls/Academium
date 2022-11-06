@@ -16,6 +16,7 @@
     <title>Cursos Academium</title>
     <link rel="stylesheet" href=".\Styles\cursos.css?v=<?php echo time(); ?>">
     <link rel="shortcut icon" href=".\Src\icon Academium.ico">
+    <script src = "./Scripts/SearchBar.js" defer></script>
 </head>
 <body>    
     <div id="container">
@@ -27,7 +28,7 @@
                 <div class="SearchAreaDiv">
                     <img src=".\Src\lupa.png" id="LupaEmoji">
                     <form class = "searchbox">
-                        <input type="text" placeholder="O que você quer procurar?" id="InputAreaCourses">
+                        <input type="text" placeholder="O que você quer procurar?" id="InputAreaCourses" onkeyup="search()">
                     </form>
 
                 </div>
@@ -40,13 +41,13 @@
              <button id="botoes">Instrutor ↕</button>
         </div>
             
-        <div class="resultados_cursos">
+        <div class="resultados_cursos" id="resultados_cursos">
             <?php
                 while($user_data = mysqli_fetch_assoc($result)){
                     echo "<div class='div_curso'>";
                         echo "<a href='".$user_data['link_curso']."' target='_blank'>";
                         echo "<p class='curso' id= 'curso_nome'>".$user_data['id_curso']."</p>";
-                        echo "<p class='curso' id= 'curso_nome'>".$user_data['curso_nome']."</p>";
+                        echo "<p class='curso_nome' id= 'curso_nome'>".$user_data['curso_nome']."</p>";
                         echo "<p class='curso' id= 'curso_horas'>".$user_data['carga_horaria']."h</p>";
                         echo "<p class='curso' id= 'curso_preco'>R$ ".$user_data['preco_curso']."</p>";
                         echo "<p class= 'curso_avaliacao'>".$user_data['avaliacao_curso']."</p>";
@@ -60,8 +61,9 @@
     </div>
 </div>
     
-<script src="https://code.jquery.com/jquery-1.9.1.js"></script>
+<script src = "https://code.jquery.com/jquery-1.9.1.js"></script>
 <script src = "./Scripts/sortCursos.js"> </script>
+
 
 </body>
 </html>
