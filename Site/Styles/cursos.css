@@ -108,7 +108,7 @@ body{
     flex-wrap: wrap;
 }
 
-#div_curso{
+.div_curso{
     display: inline;
     width: 200px;
     height: 320px;

@@ -43,12 +43,13 @@
         <div class="resultados_cursos">
             <?php
                 while($user_data = mysqli_fetch_assoc($result)){
-                    echo "<div id='div_curso'>";
+                    echo "<div class='div_curso'>";
                         echo "<a href='".$user_data['link_curso']."' target='_blank'>";
+                        echo "<p class='curso' id= 'curso_nome'>".$user_data['id_curso']."</p>";
                         echo "<p class='curso' id= 'curso_nome'>".$user_data['curso_nome']."</p>";
                         echo "<p class='curso' id= 'curso_horas'>".$user_data['carga_horaria']."h</p>";
                         echo "<p class='curso' id= 'curso_preco'>R$ ".$user_data['preco_curso']."</p>";
-                        echo "<p class='curso' id= 'curso_avaliacao'>".$user_data['avaliacao_curso']."</p>";
+                        echo "<p class= 'curso_avaliacao'>".$user_data['avaliacao_curso']."</p>";
                         echo "<p class='curso' id= 'curso_topico'>".$user_data['topico_curso']."</p>";
                         echo "<p class='curso' id= 'curso_professor '>".$user_data['instrutor']."</p>";
                         echo "</a>";
