@@ -27,7 +27,7 @@
                 <div class="SearchAreaDiv">
                     <img src=".\Src\lupa.png" id="LupaEmoji">
                     <form class = "searchbox">
-                        <input type="text" placeholder="Oque você quer procurar?" id="InputAreaCourses">
+                        <input type="text" placeholder="O que você quer procurar?" id="InputAreaCourses">
                     </form>
 
                 </div>
