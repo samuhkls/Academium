@@ -1,11 +1,11 @@
 function sortAvaliacao() {
   var i, troca, b, checkTroca;
-  cursos = document.getElementById("avaliacao container");
+  cursos = document.getElementById("div_curso");
   troca = true;
   // loop da troca
   while (troca) {
     troca = false;
-    b = document.getElementsByClassName('avaliacao');
+    b = document.getElementById('curso_avaliacao');
     // loop por todos os elementos:
     for (i = 0; i < (b.length - 1); i++) {
 
@@ -14,12 +14,13 @@ function sortAvaliacao() {
       if (Number(b[i].innerHTML) < Number(b[i + 1].innerHTML)) {
         // se o numero for maior executa a troca
         checkTroca = true;
+        cursos = b;
         break;
       }
     }
     if (checkTroca) {
       // se a troca foi feita, marca troca como true para refazer o loop
-      b[i].parentNode.insertBefore(b[i + 1], b[i]);
+      cursos[i].parentNode.insertBefore(cursos[i + 1], cursos[i]);
       troca = true;
     }
   }
