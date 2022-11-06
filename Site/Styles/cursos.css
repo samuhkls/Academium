@@ -28,7 +28,7 @@ body{
     max-width: 600px;
     padding: 10px 10px 10px 10px;
     margin:5px;
-    background-color: #FFFFFF;
+    background-color: #00000000;
     transition-duration: 2s;
 }
 
@@ -77,7 +77,7 @@ body{
 #botoes{
     position: relative;
     display: block;
-    width: 35vh;
+    width: 39vh;
     height: 30px;
     padding: 0px 30px 0px 25px;
     margin: 5px 15px 5px 15px;
@@ -92,7 +92,7 @@ body{
 
 #botoes:hover{
     color: #000000;
-    letter-spacing: 2px;
+    letter-spacing: 1px;
     background-color: #ce160f;
     cursor: pointer;
 }
@@ -117,9 +117,17 @@ body{
     background-color: #FFFFFF;
     border-radius: 10px; 
     font-family: 'Tisa Sans Pro', sans-serif;
+    transition-duration: 0.3s;
 }
 
-.curso{
+#div_curso:hover{
+    transform: translate(0px, -5px);
+    
+    box-shadow: 3px 3px 5px #000000;
+    transition-duration: 0.3s;
+}
+
+.curso, .curso_nome{
     color: #000000;
     font-size: 17px;
     margin: 3px 0px 10px 0px;
